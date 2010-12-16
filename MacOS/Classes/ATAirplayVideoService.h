@@ -32,5 +32,6 @@
 @property (nonatomic, retain) NSImageView *imageView;
 
 - (void) start;
+- (void) showPhoto;
 
 @end

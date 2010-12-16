@@ -59,6 +59,16 @@ static int PORT = 6001;
 	[bonjourService publish];
 }
 
+- (void) showPhoto
+{
+	[imageView setHidden:NO];
+	[movieView setHidden:YES];
+	
+	NSImage *image = [[NSImage alloc] initWithData:photoData];
+	imageView.image = image;
+	[image release];
+}
+
 #pragma mark -
 #pragma mark Socket Delegate
 
@@ -76,11 +86,6 @@ static int PORT = 6001;
 	[newSocket readDataWithTimeout:120 tag:[self nextTag]];
 }
 
-- (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
-{
-	
-}
-
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
 	NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -89,14 +94,6 @@ static int PORT = 6001;
 	if(message == nil)
 	{
 		[photoData appendData:data];
-		
-		// Swap the views
-		/*[imageView setHidden:NO];
-		[movieView setHidden:YES];
-		
-		NSImage *image = [[NSImage alloc] initWithData:photoData];
-		imageView.image = image;
-		[image release];*/
 	}
 	
 	if(![message contains:@"HTTP/1.1 404"])
@@ -202,35 +199,6 @@ static int PORT = 6001;
 	
 	[body release];
 	[scrub release];
-}
-
-#pragma mark -
-#pragma mark Net Service Delegate
-
-- (void)netServiceDidPublish:(NSNetService *)sender
-{
-	NSLog(@"started");
-}
-
-- (void)netServiceDidResolveAddress:(NSNetService *)sender
-{
-	NSLog(@"service has been resolved");
-}
-
-- (void)netService:(NSNetService *)sender didUpdateTXTRecordData:(NSData *)data
-{
-	NSDictionary *dict = [NSNetService dictionaryFromTXTRecordData:data];
-	NSLog(@"txt record data updated : %@", dict);
-}
-
-- (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict
-{
-	NSLog(@"did not resolve w/error : %@", errorDict);
-}
-
-- (void)netServiceDidStop:(NSNetService *)sender
-{
-	NSLog(@"service stopped");
 }
 
 @end

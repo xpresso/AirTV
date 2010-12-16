@@ -7,14 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <QuickTime/QuickTime.h>
 #import <QTKit/QTKit.h>
 #import "ATAirplayVideoService.h"
+#import "ATMovieView.h"
 
 @interface AirTVAppDelegate : NSObject <NSApplicationDelegate, NSNetServiceDelegate, NSWindowDelegate>
 {
     NSWindow *window;
-	IBOutlet QTMovieView *movieView;
+	IBOutlet ATMovieView *movieView;
 	IBOutlet NSImageView *imageView;
 	
 	ATAirplayVideoService *videoService;
@@ -23,5 +23,6 @@
 @property (assign) IBOutlet NSWindow *window;
 
 - (IBAction) toggleFullscreen:(id)sender;
+- (IBAction) showPhoto:(id)sender;
 
 @end

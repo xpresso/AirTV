@@ -32,6 +32,11 @@
 	}
 }
 
+- (IBAction) showPhoto:(id)sender
+{
+	[videoService showPhoto];
+}
+
 - (void)windowWillClose:(NSNotification *)notification
 {
 	exit(0);

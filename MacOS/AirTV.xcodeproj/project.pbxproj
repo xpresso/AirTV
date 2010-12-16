@@ -15,6 +15,7 @@
 		1F06517412B94B3000844D1D /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F06517312B94B3000844D1D /* QTKit.framework */; };
 		1F42424312B96085004528F7 /* NSString+RIExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F42424212B96085004528F7 /* NSString+RIExtended.m */; };
 		1F973F6412BAA30D00686052 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1F973F6312BAA30D00686052 /* Credits.rtf */; };
+		1F973FA012BAA8A600686052 /* ATMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F973F9F12BAA8A600686052 /* ATMovieView.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -39,6 +40,8 @@
 		1F42424112B96085004528F7 /* NSString+RIExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RIExtended.h"; path = "External/NSString+RIExtended.h"; sourceTree = SOURCE_ROOT; };
 		1F42424212B96085004528F7 /* NSString+RIExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RIExtended.m"; path = "External/NSString+RIExtended.m"; sourceTree = SOURCE_ROOT; };
 		1F973F6312BAA30D00686052 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		1F973F9E12BAA8A600686052 /* ATMovieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATMovieView.h; path = Classes/ATMovieView.h; sourceTree = "<group>"; };
+		1F973F9F12BAA8A600686052 /* ATMovieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ATMovieView.m; path = Classes/ATMovieView.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -67,6 +70,8 @@
 				1F0650CE12B92FCC00844D1D /* AirTVAppDelegate.m */,
 				1F0650CF12B92FCC00844D1D /* ATAirplayVideoService.h */,
 				1F0650D012B92FCC00844D1D /* ATAirplayVideoService.m */,
+				1F973F9E12BAA8A600686052 /* ATMovieView.h */,
+				1F973F9F12BAA8A600686052 /* ATMovieView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				1F0650D812B92FDB00844D1D /* AsyncSocket.m in Sources */,
 				1F0650D912B92FDB00844D1D /* AsyncUdpSocket.m in Sources */,
 				1F42424312B96085004528F7 /* NSString+RIExtended.m in Sources */,
+				1F973FA012BAA8A600686052 /* ATMovieView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
