@@ -18,6 +18,8 @@
 	videoService.movieView = movieView;
 	videoService.imageView = imageView;
 	[videoService start];
+	
+	[movieView setAcceptsTouchEvents:NO];
 }
 
 - (IBAction) toggleFullscreen:(id)sender

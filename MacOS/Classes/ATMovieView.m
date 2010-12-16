@@ -22,4 +22,14 @@
 	}
 }
 
+- (void) mouseDown:(NSEvent *)theEvent
+{
+	// Do nothing
+}
+
+- (void) rightMouseDown:(NSEvent *)theEvent
+{
+	// Do nothing
+}
+
 @end

@@ -122,8 +122,15 @@ static int PORT = 6001;
 		NSArray *contentWords = [contentLine componentsSeparatedByString:@" "];
 		NSString *contentURL = [contentWords objectAtIndex:1];
 		
+		// Get the starting position
+		NSString *posLine = [lines objectAtIndex:9];
+		NSArray *posWords = [posLine componentsSeparatedByString:@" "];
+		NSString *posString = [posWords objectAtIndex:1];
+		float realPos = [posString floatValue];
+		
 		movie = [QTMovie movieWithURL:[NSURL URLWithString:contentURL] error:NULL];
 		[movie autoplay];
+		[movie setCurrentTime:QTMakeTimeWithTimeInterval(realPos)];
 		movieView.movie = movie;
 	}
 	else if([firstLine contains:@"GET /scrub"])
@@ -146,6 +153,11 @@ static int PORT = 6001;
 		float realRate = [rate floatValue];
 		
 		[movie setRate:realRate];
+	}
+	else if([command isEqualToString:@"/stop"])
+	{
+		[movie stop];
+		movieView.movie = nil;
 	}
 	
 	[message release];
